@@ -27,10 +27,8 @@
             <br><br>
             Credit card number: <input type="text" id="credit" name="credit" />
             <br/>
-
-            Expiration date: <input type="text" id="date" name="date" />
+            Expiration date: <input type="text" id="date" name="date" /><br>
             CVV: <input type="text" id="cvv" name="cvv" />
-            </b>
             <br/>
             <br/>
             Chicken Preference:
@@ -39,16 +37,30 @@
                 <option value="1">Yellow Chicken</option>
                 <option value="2">Brown Chicken</option>
             </select>
+            </b>
             <br/>
             <br/>
-            Do you want to be scammed?
-            <select id="scamming" name="scamming">
+            <input type="submit" value="submit" />
+            <br/><br/>
+            <b>Do you want to be scammed?</b><br/>
+    <!--    <select id="scamming" name="scamming">
                 <option value="0"></option>
                 <option value="1">Yes, I wish to be scammed</option>
                 <option value="2">No, I choose peace</option>
-            </select>
-            <br><br>
-            <input type="submit" value="submit" />
+            </select> -->
+            <button type="button" onclick =
+            "document.getElementById('scamY').style.display='block'">I wish to be scammed</button>
+
+            <button type="button" onclick="scamFcn()">No, I choose peace</button>
+            <p id="scamY" style="display:none">That's more like it</p>
+            
+            <script>
+                function scamFcn() {
+                  window.alert("Are you sure you wanted to click that?");
+                }
+            </script>
+
+
             <br/><p>
                 There are people that have fallen victim of such attrocities. To avoid
                 these scammers, here is an example of a 
@@ -64,9 +76,15 @@
             <ol>
                 <p>1. Don't give money or personal details OR click on any links if you're unsure.</p>
                 <p>2. Scammers pretend to be from organisations you know and trust</p>
-                <p>3. If you receive a message from someone you know asking for money, double-check with that person another way, like by calling them.</p>
+                <p>3. If you receive a message from someone you know asking for money, 
+                double-check with that person another way, like by calling them.</p>
             </ol>
             <p><b>AS A GENERAL RULE, IF SOMETHING SEEMS TOO GOOD TO BE TRUE, IT PROBABLY IS.</b></p>
+            <br/>
+            <h3> Clik on the button if you want to risk it all</h3>
+            <button type="button" onclick="document.getElementById('submitButton').innerHTML=
+            'You have made the correct choice '">button</button>  
+            <p id="submitButton">Don't miss out on this opportunity... </p>
         </form>
     </body>
 </html>
