@@ -43,11 +43,7 @@
             <input type="submit" value="submit" />
             <br/><br/>
             <b>Do you want to be scammed?</b><br/>
-    <!--    <select id="scamming" name="scamming">
-                <option value="0"></option>
-                <option value="1">Yes, I wish to be scammed</option>
-                <option value="2">No, I choose peace</option>
-            </select> -->
+
             <button type="button" onclick =
             "document.getElementById('scamY').style.display='block'">I wish to be scammed</button>
 
@@ -60,6 +56,7 @@
                 }
             </script>
 
+            
 
             <br/><p>
                 There are people that have fallen victim of such attrocities. To avoid
@@ -85,6 +82,22 @@
             <button type="button" onclick="document.getElementById('submitButton').innerHTML=
             'You have made the correct choice '">button</button>  
             <p id="submitButton">Don't miss out on this opportunity... </p>
+            <br/>
+            
+            <b><p>Be aware, any action taken will have some kind of consequence...</p></b>
+            <img id="myImg" src="chickenNice.gif" width="220" height="200">
+            <br/><button onclick="myFunction()">Click me</button><br/><br/>
+            <script>
+                function myFunction() {
+                  document.getElementById("myImg").src = "chicken-icegif-24.gif";
+                  document.getElementById("bruh").style.display='block';
+                }
+            </script>
+            <p id="bruh" style="display:none">WHY DID YOU CLICK THE BUTTON!<br/>
+            There is no reason for you to click the button written "Click me"<br/>
+            I guess you really want to get scammed...</p>
+
+
         </form>
     </body>
 </html>
