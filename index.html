@@ -18,7 +18,7 @@
         <p>Let's know a bit more about you.</p>
         <b>
 
-       <form action="response.php" method="get">
+       <form action="response.php" method="post">
             <p>
                 <label for="firstname">First name: </label><input type="text" id="firstname" name="firstname" />
                 <br/>
@@ -34,7 +34,7 @@
                 <br/>
             
                 Chicken Preference:
-                <select id="favourite colour" name="favourite colour">
+                <select id="favourite chicken" name="favourite chicken">
                     <option value="0"></option>
                     <option value="1">Yellow Chicken</option>
                     <option value="2">Brown Chicken</option>
@@ -88,6 +88,9 @@
         <br/>
 
         <b><p>Be aware, any action taken will have some kind of consequence...</p></b>
+        <p id="bruh" style="display:none">WHY DID YOU CLICK THE BUTTON!<br/>
+            There is no reason for you to click the button written "Click me"<br/>
+            I guess you really want to get scammed...</p>
         <img id="myImg" src="pic/chickenNice.gif" width="220" height="200">
         <br/><button onclick="myFunction();return false;">Click me</button><br/><br/>  
         <!-- return false statement is used to prevent the submission of the button, 
@@ -98,8 +101,5 @@
               document.getElementById("bruh").style.display='block';
             }
         </script>
-        <p id="bruh" style="display:none">WHY DID YOU CLICK THE BUTTON!<br/>
-        There is no reason for you to click the button written "Click me"<br/>
-        I guess you really want to get scammed...</p>
     </body>
 </html>
