@@ -14,25 +14,51 @@
         </p>
         <img src="pic/mysterychicken.jpg" 
         alt="mystery chicken" style="width:200px;height:200px;">
+
+
         
         <p>Let's know a bit more about you.</p>
         <b>
-
        <form action="response.php" method="post">
+
+            <style>
+                .error {
+                    color: red;
+                    display: none;
+                }
+            </style>
+
             <p>
-                <label for="firstname">First name: </label><input type="text" id="firstname" name="firstname" />
+                <label for="firstname">First name: </label>
+                <input type="text" id="firstname" name="firstname" onblur="validateField(this)" required/>
+                <span class="error" id="firstnameError">This field is required</span>
                 <br/>
-                <label for="lastname">Last name: </label><input type="text" id="lastname" name="lastname" />
+
+                <label for="lastname">Last name: </label>
+                <input type="text" id="lastname" name="lastname" onblur="validateField(this)" required />
+                <span class="error" id="lastnameError">This field is required</span>
                 <br/>
-                <label for="bdate">When is your birthday:</label><input type="date" id="bdate" name="bdate" min="1924-12-32" max="2024-12-31">
-                <br><br>
-                <label for="credit">Credit card number: </label><input type="text" id="credit" name="credit" />
+
+                <label for="bdate">When is your birthday:</label>
+                <input type="date" id="bdate" name="bdate" min="1924-12-32" max="2024-12-31" onblur="validateField(this)" required />
+                <span class="error" id="bdateError">This field is required</span>
+                <br/><br/>
+
+                <label for="credit">Credit card number: </label>
+                <input type="text" id="credit" name="credit" onblur="validateField(this)" required />
+                <span class="error" id="creditError">This field is required</span>
                 <br/>
-                <label type="date">Expiration date:</label><input type="month" id="date" name="date" min="2024-01" max="2030-12"/><br>
-                <label for="cvv">CVV: </label><input type="text" id="cvv" name="cvv" required minlength="3" maxlength="3" size="10" />
+
+                <label type="date">Expiration date:</label>
+                <input type="month" id="date" name="date" min="2024-01" max="2030-12" onblur="validateField(this)" required />
+                <span class="error" id="dateError">This field is required</span>
                 <br/>
-                <br/>
-            
+
+                <label for="cvv">CVV: </label>
+                <input type="text" id="cvv" name="cvv" minlength="3" maxlength="3" size="10" onblur="validateField(this)" required />
+                <span class="error" id="cvvError">This field is required</span>
+                <br/><br/>
+ 
                 Chicken Preference:
                 <select id="favouritechicken" name="favouritechicken">
                     <option value="0"></option>
@@ -43,6 +69,19 @@
                 <br/>
                 <br/>
                 <input type="submit" />
+
+                <script>
+                    function validateField(field) {
+                        var errorSpan = document.getElementById(field.id + "Error");
+                        if (field.value.trim() === "") {
+                            errorSpan.style.display = "inline";
+                        } 
+                        
+                        else {
+                            errorSpan.style.display = "none";
+                        }
+                    }
+                </script>
             </p>
         </form> 
 
@@ -60,6 +99,7 @@
                 window.alert("Are you sure you wanted to click that?");
             }
         </script>
+
 
         <br/><p>
             There are people that have fallen victim of such attrocities. To avoid
@@ -81,11 +121,18 @@
         </ol>
         <p><b>AS A GENERAL RULE, IF SOMETHING SEEMS TOO GOOD TO BE TRUE, IT PROBABLY IS.</b></p>
         <br/>
+
         <h3> Clik on the button if you want to risk it all</h3>
-        <button type="button" onclick="document.getElementById('submitButton').innerHTML=
-        'You have made the correct choice '">button</button>  
+        <button type="button" onclick="buttonfcn(this)">button</button>  
         <p id="submitButton">Don't miss out on this opportunity... </p>
+        <script>
+            function buttonfcn(elem) {
+                elem.innerHTML="Sublime!"
+                document.getElementById('submitButton').innerHTML='You have made the correct choice'
+            }
+        </script>
         <br/>
+
 
         <b><p>Be aware, any action taken will have some kind of consequence...</p></b>
         <p id="bruh" style="display:none">WHY DID YOU CLICK THE BUTTON!<br/>
@@ -101,5 +148,23 @@
               document.getElementById("bruh").style.display='block';
             }
         </script>
+
+
+        <button id="fetchButton">Fetch Text</button>
+        <p id="displayText"></p>
+
+        <script>
+            document.getElementById('fetchButton').addEventListener('click', () => {
+                fetch('helloworld.txt')
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById('displayText').textContent = data;
+                    })
+                    .catch(error => {
+                        console.error('Error fetching the file:', error);
+                    });
+            });
+        </script>
     </body>
+
 </html>
