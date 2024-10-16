@@ -16,7 +16,7 @@
         <p>Expiration Date: <?= htmlspecialchars ($_POST ['date']) ?></p>
         <p>cvv: <?= htmlspecialchars ($_POST ['cvv']) ?></p>
 
-        <h3>Funsies :> </h3>
+        <h3>Funsies :></h3>
         <!--<p>Chicken Preference -> <//?= htmlspecialchars ($_POST ['favouritechicken']) ?></p> -->
     </body>
 </html>
