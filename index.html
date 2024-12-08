@@ -68,8 +68,16 @@
                 </b>
                 <br/>
                 <br/>
-                <button onclick="redirectweb()">Search dB</button>
-
+                <button onclick="redirectweb()">submit</button>
+                
+                <script>
+                    function redirectweb() {
+                        type="submit";
+                        location.href="searchdB.html";
+                        //target="_blank";
+                    }
+                </script>
+                
                 <script>
                     function validateField(field) {
                         var errorSpan = document.getElementById(field.id + "Error");
@@ -86,13 +94,7 @@
         </form> 
 
         
-        <script>
-            function redirectweb() {
-                type="submit";
-                location.href="searchdB.html";
-                //target="_blank";
-            }
-        </script>
+        
 
         <br/><br/>
         <b>Do you want to be scammed?</b><br/>
