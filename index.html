@@ -195,15 +195,21 @@
         <h3>You know what's coolder than an LED?</h3>
         <h2>A MF SENSOR!</h2>
         <p>Click the button to view sensor data</p>
-        <button onclick="bme280sensor()">View Sensor</button>
-        <p id="sensorData"></p>
+
+        <div class="container">
+            <!-- Button to fetch data -->
+            <button onclick="bme280sensor()">Get Sensor Readings</button>
+    
+            <!-- Div to display the sensor readings -->
+            <div id="sensorData"></div>
+        </div>
 
         <script>
             function bme280sensor() {
                 fetch('sensor.php')
-                    //.then (response => response.text())
-                    .then(data => await response.text {
-                        document.getElementById('sensorData').innerText = data;
+                    .then (response => response.text())
+                    .then(data => {
+                        document.getElementById('sensorData').innerHTML = data;
                     })
                     .catch(error => {
                         document.getElementById('sensorData').innerText = 'Error No Value.';
@@ -211,7 +217,6 @@
                     });
             }  
         </script>
-
         
     </body>
 
