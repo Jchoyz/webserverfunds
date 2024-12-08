@@ -33,7 +33,7 @@
             $cvv = ($_GET ['cvv']);
 
             // Query to retrieve filtered data
-            $sql = "SELECT * FROM users "; //WHERE lastname = $lastname
+            $sql = "SELECT * FROM users WHERE lastname = $lastname"; //WHERE lastname = $lastname
             $result = mysqli_query($conn, $sql);
             
             foreach ($result as $row) {
