@@ -21,11 +21,14 @@
 
         // Retrieve filter criteria from the form
         if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-            $min_age = intval($_GET['min_age']);
-            $max_age = intval($_GET['max_age']);
+            $name = htmlspecialchars($_GET['firstname']) . " " . htmlspecialchars($_GET['lastname']);
+                $birthday = htmlspecialchars ($_GET['bdate']);
+                $creditnum = htmlspecialchars ($_GET['credit']);
+                $expiredate = htmlspecialchars ($_GET ['expdate']);
+                $cvv = htmlspecialchars ($_GET ['cvv']);
 
             // Query to retrieve filtered data
-            $sql = "SELECT * FROM users WHERE lastname = $lastname ";
+            $sql = "SELECT * FROM users "; //WHERE lastname = $lastname
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {
