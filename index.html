@@ -168,6 +168,28 @@
                     });
             });
         </script>
+
+
+        <br/><h3> Want to see something really cool?</h3>
+        <p id="ledtoggle">Click the button to toggle the LED!</p>
+        
+        <button onclick="toggle()">Toggle LED</button>
+
+        <script>
+            function toggle() {
+                fetch('gpio.php')
+                    .then (response => response.text())
+                    .then(data => {
+                        document.getElementById('status').innerText = `Response: ${data}`;
+                    })
+                    .catch(error => {
+                        document.getElementById('status').innerText = 'Error toggling LED.';
+                        console.error('Error:', error);
+                    });
+            }  
+        </script>
+
+
     </body>
 
 </html>
