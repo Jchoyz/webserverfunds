@@ -15,8 +15,11 @@
         $conn = new mysqli($servername, $username, $password, $database);
 
         // Check connection
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
+        if (!$conn) {
+            die("Connection failed: " . $conn->mysqli_connect_error);
+        }
+        else {
+            echo "Connected successfully";
         }
 
         // Retrieve filter criteria from the form
@@ -36,7 +39,7 @@
             foreach ($result as $row) {
                 $row["firstname"] == $firstname
                 echo " Hello {$row['firstname']} | {$row['lastname']}";
-                echo "</br> {$row['bdate']} | {$row['credit']} | {$row['expdate']} | {$row['cvv']}"
+                echo "</br> {$row['bdate']} | {$row['credit']} | {$row['expdate']} | {$row['cvv']}";
                 $found = true;
                 break;
             }
