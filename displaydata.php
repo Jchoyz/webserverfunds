@@ -6,7 +6,7 @@
     <body>
     <?php
         // Database connection settings
-        $servername = "chickenmcflurry.local";
+        $servername = "localhost";
         $username = "chickenjr";
         $password = "voidnul0"; 
         $database = "scammed"; 
@@ -20,7 +20,8 @@
         }
 
         // Retrieve filter criteria from the form
-        if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+        if ($_SERVER['REQUEST_METHOD'] == 'GET') 
+        {
             $firstname = htmlspecialchars($_GET['firstname']);
             $lastname = htmlspecialchars($_GET['lastname']);
             $birthday = htmlspecialchars ($_GET['bdate']);
@@ -33,19 +34,19 @@
             $result = $conn->query($sql);
             
             foreach ($result as $row) 
-            {
-                if ($row["firstname"] == $firstname) {
-                    echo " Hello {$row['firstname']}{$row['lastname']};
+            
+                if ($row["firstname"] == $firstname) 
+                    echo " Hello {$row['firstname']}{$row['lastname']}";
                     $found = true;
                     break;
-                }
+                
                 
                 if (!$found) 
                 {
                     echo "Sorry, your entry is invalid, please try again.<br>";
                     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
                 }
-            }
+            
             
 
             if ($result->num_rows > 0) {

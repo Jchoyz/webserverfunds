@@ -21,7 +21,7 @@
 
         <?php
             // Database connection settings
-            $servername = "chickenmcflurry.local";
+            $servername = "localhost";
             $username = "chickenjr";
             $password = "voidnul0"; 
             $database = "scammed"; 
