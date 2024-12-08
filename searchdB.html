@@ -10,7 +10,15 @@
             <label for="lastname">Last Name: </label><br>
             <input type="text" id="lastname" name="lastname" required><br><br>
 
-            <button type="submit">Filter Search</button>
+            <!--<button type="submit">Filter Search</button>-->
+            <button onclick="redirectweb()">Filter Search</button>
+            <script>
+                function redirectweb() {
+                    type="submit";
+                    window.location.href="displaydata.php";
+                    target="_blank";
+                }
+            </script>
         </form>
 
     </body>
