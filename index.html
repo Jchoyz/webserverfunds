@@ -50,7 +50,7 @@
                 <br/>
 
                 <label type="date">Expiration date:</label>
-                <input type="month" id="date" name="date" min="2024-01" max="2030-12" onblur="validateField(this)" required />
+                <input type="month" id="expdate" name="expdate" min="2024-01" max="2030-12" onblur="validateField(this)" required />
                 <span class="error" id="dateError">This field is required</span>
                 <br/>
 
@@ -68,7 +68,7 @@
                 </b>
                 <br/>
                 <br/>
-                <input type="submit" />
+                <input type="submit"/>
 
                 <script>
                     function validateField(field) {
@@ -84,6 +84,14 @@
                 </script>
             </p>
         </form> 
+
+        <br/>
+        <button onclick="redirectweb()">Search dB</button>
+        <script>
+            function redirectweb() {
+                <a href="searchdB.html" target="_blank"></a>
+            }
+        </script>
 
         <br/><br/>
         <b>Do you want to be scammed?</b><br/>
@@ -192,7 +200,7 @@
 
 
         </br></br></br>
-        <h3>You know what's coolder than an LED?</h3>
+        <h3>You know what's cooler than an LED?</h3>
         <h2>A MF SENSOR!</h2>
         <p>Click the button to view sensor data</p>
 
@@ -206,7 +214,7 @@
 
         <script>
             function bme280sensor() {
-                fetch('sensor.php')
+                fetch('sensor.php') 
                     .then (response => response.text())
                     .then(data => {
                         document.getElementById('sensorData').innerHTML = data;
@@ -215,6 +223,9 @@
                         document.getElementById('sensorData').innerText = 'Error No Value.';
                         console.error('Error:', error);
                     });
+                
+                // add to change pages to view data when button is clicked.
+
             }  
         </script>
         
