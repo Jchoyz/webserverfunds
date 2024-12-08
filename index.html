@@ -196,20 +196,23 @@
         <h2>A MF SENSOR!</h2>
         <p>Click the button to view sensor data</p>
         <button onclick="bme280sensor()">View Sensor</button>
+        <p id="sensorData"></p>
 
         <script>
             function bme280sensor() {
                 fetch('sensor.php')
-                    .then (response => response.text())
-                    .then(data => {
-                        document.getElementById('status').innerText = `Response: ${data}`;
+                    //.then (response => response.text())
+                    .then(data => await response.text {
+                        document.getElementById('sensorData').innerText = data;
                     })
                     .catch(error => {
-                        document.getElementById('status').innerText = 'Error toggling LED.';
+                        document.getElementById('sensorData').innerText = 'Error No Value.';
                         console.error('Error:', error);
                     });
             }  
         </script>
+
+        
     </body>
 
 </html>
