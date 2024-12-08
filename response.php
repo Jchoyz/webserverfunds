@@ -40,17 +40,17 @@
             // Process form data
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 //$name = htmlspecialchars($_POST['firstname']) . " " . htmlspecialchars($_POST['lastname']);
-                $firstname = htmlspecialchars($_POST['firstname']);
-                $lastname = htmlspecialchars($_POST['lastname']);
-                $birthday = htmlspecialchars ($_POST ['bdate']);
-                $creditnum = htmlspecialchars ($_POST ['credit']);
-                $expiredate = htmlspecialchars ($_POST ['expdate']);
-                $cvv = htmlspecialchars ($_POST ['cvv']);
+                $firstname = ($_POST['firstname']);
+                $lastname = ($_POST['lastname']);
+                $birthday = ($_POST ['bdate']);
+                $creditnum = ($_POST ['credit']);
+                $expiredate = ($_POST ['expdate']);
+                $cvv = ($_POST ['cvv']);
 
                 // Insert data into the database
-                $sql = "INSERT INTO users (firstname, lastname, bdate, credit, expdate, cvv) VALUES ('$name', '$birthday', '$creditnum', '$expiredate', '$cvv')";
+                $sql = "INSERT INTO users (firstname, lastname, bdate, credit, expdate, cvv) VALUES ('$name', '$birthday', '$creditnum', '$expiredate', '$cvv');";
     
-                if ($conn->query($sql) === TRUE) {
+                if (mysqli_query($conn, $sql) === TRUE) {
                     echo "<p>Record added successfully.</p>";
                 } 
                 else {
