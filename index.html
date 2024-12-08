@@ -170,9 +170,9 @@
         </script>
 
 
+        <!-- Reminder to set the 27 GPIO pin mode to out (gpio mode 27 out)-->
         <br/><h3> Want to see something really cool?</h3>
-        <p id="ledtoggle">Click the button to toggle the LED!</p>
-        
+        <p>Click the button to toggle the LED!</p>
         <button onclick="toggle()">Toggle LED</button>
 
         <script>
@@ -190,6 +190,26 @@
         </script>
 
 
+
+        </br></br></br>
+        <h3>You know what's coolder than an LED?</h3>
+        <h2>A MF SENSOR!</h2>
+        <p>Click the button to view sensor data</p>
+        <button onclick="bme280sensor()">View Sensor</button>
+
+        <script>
+            function bme280sensor() {
+                fetch('sensor.php')
+                    .then (response => response.text())
+                    .then(data => {
+                        document.getElementById('status').innerText = `Response: ${data}`;
+                    })
+                    .catch(error => {
+                        document.getElementById('status').innerText = 'Error toggling LED.';
+                        console.error('Error:', error);
+                    });
+            }  
+        </script>
     </body>
 
 </html>
