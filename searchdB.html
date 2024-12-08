@@ -6,19 +6,20 @@
     <body>
         <h1>Filter Through the Data from this Database</h1>
 
-        <form action="displaydata.php" method="GET">
+        <form action="displaydata.php" method="get">
             <label for="lastname">Last Name: </label><br>
             <input type="text" id="lastname" name="lastname" required><br><br>
 
             <!--<button type="submit">Filter Search</button>-->
-            <button onclick="redirectweb()">Filter Search</button>
+            <!--<button onclick="redirectweb()">Filter Search</button>
             <script>
                 function redirectweb() {
                     type="submit";
                     window.location.href="displaydata.php";
                     //target="_blank";
                 }
-            </script>
+            </script>-->
+            <input type="submit" value="Filter Search">
         </form>
 
     </body>
