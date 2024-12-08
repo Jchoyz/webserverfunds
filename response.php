@@ -4,7 +4,7 @@
         <title>Form Response</title>
     </head>
     <body>
-        <!--<h1>Important Stuff to take into Consideration</h1>
+        <h1>Important Stuff to take into Consideration</h1>
         <p>Thank you for entrusting me with your personal information; it fills me with gratitude. </p><br/>
         
         <h3>Personal Information</h3>
@@ -16,7 +16,7 @@
         <p>Expiration Date: <//?= htmlspecialchars ($_POST ['expdate']) ?></p>
         <p>cvv: <//?= htmlspecialchars ($_POST ['cvv']) ?></p> 
 
-        <h3>Funsies :></h3> -->
+        <h3>Funsies :></h3> 
         <!--<p>Chicken Preference -> <//?= htmlspecialchars ($_POST ['favouritechicken']) ?></p> -->
 
         <?php
