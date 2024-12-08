@@ -21,15 +21,32 @@
 
         // Retrieve filter criteria from the form
         if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-            $name = htmlspecialchars($_GET['firstname']) . " " . htmlspecialchars($_GET['lastname']);
-                $birthday = htmlspecialchars ($_GET['bdate']);
-                $creditnum = htmlspecialchars ($_GET['credit']);
-                $expiredate = htmlspecialchars ($_GET ['expdate']);
-                $cvv = htmlspecialchars ($_GET ['cvv']);
+            $firstname = htmlspecialchars($_GET['firstname']);
+            $lastname = htmlspecialchars($_GET['lastname']);
+            $birthday = htmlspecialchars ($_GET['bdate']);
+            $creditnum = htmlspecialchars ($_GET['credit']);
+            $expiredate = htmlspecialchars ($_GET ['expdate']);
+            $cvv = htmlspecialchars ($_GET ['cvv']);
 
             // Query to retrieve filtered data
             $sql = "SELECT * FROM users "; //WHERE lastname = $lastname
             $result = $conn->query($sql);
+            
+            foreach ($result as $row) 
+            {
+                if ($row["firstname"] == $firstname) {
+                    echo " Hello {$row['firstname']}{$row['lastname']};
+                    $found = true;
+                    break;
+                }
+                
+                if (!$found) 
+                {
+                    echo "Sorry, your entry is invalid, please try again.<br>";
+                    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+                }
+            }
+            
 
             if ($result->num_rows > 0) {
                 echo "<h1>Filtered Results</h1>";

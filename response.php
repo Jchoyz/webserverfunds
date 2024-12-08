@@ -39,7 +39,9 @@
 
             // Process form data
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-                $name = htmlspecialchars($_POST['firstname']) . " " . htmlspecialchars($_POST['lastname']);
+                //$name = htmlspecialchars($_POST['firstname']) . " " . htmlspecialchars($_POST['lastname']);
+                $firstname = htmlspecialchars($_POST['firstname']);
+                $lastname = htmlspecialchars($_POST['lastname']);
                 $birthday = htmlspecialchars ($_POST ['bdate']);
                 $creditnum = htmlspecialchars ($_POST ['credit']);
                 $expiredate = htmlspecialchars ($_POST ['expdate']);
